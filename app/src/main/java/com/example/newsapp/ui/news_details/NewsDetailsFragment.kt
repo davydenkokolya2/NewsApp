@@ -1,32 +1,42 @@
 package com.example.newsapp.ui.news_details
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.newsapp.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.example.newsapp.databinding.FragmentNewsDetailsBinding
+import com.example.newsapp.ui.NavigationViewModel
+import com.example.newsapp.util.Navigation
+import kotlinx.coroutines.launch
 
 class NewsDetailsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = NewsDetailsFragment()
-    }
-
-    private lateinit var viewModel: NewsDetailsViewModel
-
+    private lateinit var binding: FragmentNewsDetailsBinding
+    private val navigationViewModel: NavigationViewModel by activityViewModels()
+    private val newsDetailsViewModel: NewsDetailsViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_news_details, container, false)
-    }
+        binding = FragmentNewsDetailsBinding.inflate(inflater, container, false)
+        binding.btnBack.setOnClickListener {
+            navigationViewModel.loadState(Navigation.HOME)
+        }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(NewsDetailsViewModel::class.java)
-        // TODO: Use the ViewModel
+        lifecycleScope.launch {
+            newsDetailsViewModel.stateInterestingCardModel.collect {
+                if (it != null) {
+                    binding.tvCategory.setText(it.category)
+                    binding.tvDescription.setText(it.description)
+                    binding.tvTitle.setText(it.title)
+                    binding.ivNewsDetailImage.setImageResource(it.full_image)
+                }
+            }
+        }
+        return binding.root
     }
 
 }

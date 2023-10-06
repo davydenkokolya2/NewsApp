@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/btnItemTrending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/ivTrendingImage"
+        app:layout_constraintStart_toStartOf="@+id/ivTrendingImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivTrendingImage"
+        app:srcCompat="@drawable/icon_trending_background" />
+
+    <ImageView
+        android:id="@+id/ivTrendingImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_trending_image" />
+
+    <TextView
+        android:id="@+id/tvItemTrendingTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnItemTrending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnItemTrending" />
+
+    <TextView
+        android:id="@+id/tvItemTrendingDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="3dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnItemTrending"
+        app:layout_constraintStart_toStartOf="@+id/tvItemTrendingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemTrendingTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

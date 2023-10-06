@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/btnItemInteresting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_intresting_card" />
+
+    <TextView
+        android:id="@+id/tvItemInterestingCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="Start"
+        android:textColor="@color/pink"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/btnItemInteresting"
+        app:layout_constraintTop_toTopOf="@+id/btnItemInteresting" />
+
+    <TextView
+        android:id="@+id/tvItemInterestingTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="Start"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivItemInterestingImage"
+        app:layout_constraintStart_toStartOf="@+id/tvItemInterestingCategory"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemInterestingCategory" />
+
+    <TextView
+        android:id="@+id/tvItemInterestingDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="Start"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivItemInterestingImage"
+        app:layout_constraintStart_toStartOf="@+id/tvItemInterestingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemInterestingTitle" />
+
+    <ImageView
+        android:id="@+id/ivItemInterestingImage"
+        android:layout_width="100dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="14dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/btnItemInteresting"
+        app:layout_constraintEnd_toEndOf="@+id/btnItemInteresting"
+        app:layout_constraintTop_toTopOf="@+id/btnItemInteresting"
+        app:srcCompat="@drawable/icon_image_card_interesting" />
+</androidx.constraintlayout.widget.ConstraintLayout>
